@@ -1,0 +1,67 @@
+﻿@page   
+@model CollageGrades.Pages.GradesFile.ListModel
+@{
+}
+
+<h1>All Grades</h1>
+
+<br />
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" asp-for="SearchTerm"/>
+            <span class="input-group-btn">
+                <button class="btn btn-primary">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    </svg>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+
+    <tr>
+        <th>Full Name</th>
+        <th>Set Number</th>
+        <th>Status</th>
+        <th>Details</th>
+        <th>Edit</th>
+    </tr>
+
+    @foreach(var grade in Model.grades)
+    {
+        <tr>
+            <td>@grade.FullName</td>
+            <td>@grade.SettingNumber</td>
+            <td>@grade.Status</td>
+            <td>
+                <a class="btn btn-group"    
+                   asp-page="./Detail"
+                   asp-route-studentId="@grade.Id">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                    </svg>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-group"
+                   asp-page="./Edit"
+                   asp-route-studentId="@grade.Id">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
+                    </svg>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+<a class="btn btn-primary" asp-page="./Edit">Add New Student</a>

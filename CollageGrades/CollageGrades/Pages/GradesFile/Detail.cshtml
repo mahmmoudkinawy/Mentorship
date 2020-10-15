@@ -1,0 +1,57 @@
+﻿@page   "{studentId:int}"
+@model CollageGrades.Pages.GradesFile.DetailModel
+@{
+}
+
+<h1>
+    Name : @Model.Grades.FullName
+</h1>
+
+<h2>
+    Set Number : @Model.Grades.SettingNumber
+</h2>
+
+<hr />
+
+<h2>
+    Information System : @Model.Grades.InformationSystem
+</h2>
+
+<h2>
+    Introduction : @Model.Grades.Introduction
+</h2>
+
+<h2>
+    Math : @Model.Grades.Math1
+</h2>
+
+<h2>
+    Physics : @Model.Grades.Physics
+</h2>
+
+<h2>
+    English : @Model.Grades.English
+</h2>
+
+<h2>
+    Discrete Mathematics : @Model.Grades.DescriteMath
+</h2>
+
+<h2>
+    Programming : @Model.Grades.Programming
+</h2>
+
+<h2>
+    Status : <mark>@Model.Grades.Status</mark>
+</h2>
+
+<br />
+
+@if(Model.Message != null)
+{
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+}
+
+<a class="btn btn-primary" asp-page="./List">All Grades</a>

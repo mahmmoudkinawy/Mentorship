@@ -1,0 +1,74 @@
+﻿@page   "{studentId:int?}"
+@model CollageGrades.Pages.GradesFile.EditModel
+@{
+}
+
+<h1>Editing @Model.Grades.FullName</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Grades.Id" />
+
+    <div class="form-group">
+        <label asp-for="Grades.FullName"></label>
+        <input type="text" class="form-control" asp-for="Grades.FullName"/>
+        <span class="text-danger" asp-validation-for="Grades.FullName"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.SettingNumber"></label>
+        <input type="text" class="form-control" asp-for="Grades.SettingNumber"/>
+        <span class="text-danger" asp-validation-for="Grades.SettingNumber"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.InformationSystem"></label>
+        <input type="text" class="form-control" asp-for="Grades.InformationSystem"/>
+        <span class="text-danger" asp-validation-for="Grades.InformationSystem"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.Introduction"></label>
+        <input type="text" class="form-control" asp-for="Grades.Introduction"/>
+        <span class="text-danger" asp-validation-for="Grades.Introduction"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.Math1"></label>
+        <input type="text" class="form-control" asp-for="Grades.Math1"/>
+        <span class="text-danger" asp-validation-for="Grades.Math1"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.Physics"></label>
+        <input type="text" class="form-control" asp-for="Grades.Physics"/>
+        <span class="text-danger" asp-validation-for="Grades.Physics"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.English"></label>
+        <input type="text" class="form-control" asp-for="Grades.English"/>
+        <span class="text-danger" asp-validation-for="Grades.English"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.DescriteMath"></label>
+        <input type="text" class="form-control" asp-for="Grades.DescriteMath"/>
+        <span class="text-danger" asp-validation-for="Grades.DescriteMath"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.Programming"></label>
+        <input type="text" class="form-control" asp-for="Grades.Programming"/>
+        <span class="text-danger" asp-validation-for="Grades.Programming"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Grades.Status"></label>
+        <input type="text" class="form-control" asp-for="Grades.Status"/>
+        <span class="text-danger" asp-validation-for="Grades.Status"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>

@@ -1,0 +1,9 @@
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\bin\Debug\netcoreapp3.1\CollageGrades.Core.deps.json
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\bin\Debug\netcoreapp3.1\CollageGrades.Core.dll
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\bin\Debug\netcoreapp3.1\CollageGrades.Core.pdb
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\obj\Debug\netcoreapp3.1\CollageGrades.Core.csprojAssemblyReference.cache
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\obj\Debug\netcoreapp3.1\CollageGrades.Core.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\obj\Debug\netcoreapp3.1\CollageGrades.Core.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\obj\Debug\netcoreapp3.1\CollageGrades.Core.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\obj\Debug\netcoreapp3.1\CollageGrades.Core.dll
+C:\Users\LENOVO\Desktop\test\CollageGrades\CollageGrades.Core\obj\Debug\netcoreapp3.1\CollageGrades.Core.pdb
