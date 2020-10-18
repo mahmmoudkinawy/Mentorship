@@ -12,13 +12,17 @@ namespace CollageGrades.Pages.GradesFile
     public class DetailModel : PageModel
     {
         private readonly IGradesData gradesData;
+
         public Grades Grades { get; set; }
+        
         [TempData]
         public string Message { get; set; }
+        
         public DetailModel(IGradesData gradesData)
         {
             this.gradesData = gradesData;
         }
+        
         public IActionResult OnGet(int studentId)
         {
             Grades = gradesData.GetById(studentId);
