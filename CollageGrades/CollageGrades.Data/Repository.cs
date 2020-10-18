@@ -114,6 +114,12 @@ namespace CollageGrades.Data
 
         public Grades GetById(int id)
         {
+            //var item1 = grades.Single(r => r.Id == id); // 1. must find result + 2. no more than 1 result //item1 != null
+            //var item2 = grades.SingleOrDefault(r => r.Id == id); // 1. no more than 1 result //item2 == null
+
+            //var item3 = grades.First(r => r.Id == id); // 1. must find result //item3 != null
+            //var item4 = grades.FirstOrDefault(r => r.Id == id); // //item4 == null
+
             return grades.SingleOrDefault(r => r.Id == id);
         }
 
@@ -126,29 +132,37 @@ namespace CollageGrades.Data
 
         public IEnumerable<Grades> GetByName(string name)
         {
-            return from r in grades
-                   where string.IsNullOrEmpty(name) || r.FullName.StartsWith(name)
-                   orderby r.Id
-                   select r;
+            return grades
+                .Where(r => string.IsNullOrWhiteSpace(name) || r.FullName.Contains(name, StringComparison.InvariantCultureIgnoreCase))
+                .OrderBy(r => r.Id);
+
+            //return from r in grades
+            //       where string.IsNullOrEmpty(name) || r.FullName.Contains(name, StringComparison.InvariantCultureIgnoreCase)
+            //       orderby r.Id
+            //       select r;
         }
 
         public Grades Update(Grades updatedGrades)
         {
             var grade = grades.SingleOrDefault(r => r.Id == updatedGrades.Id);
-            if(grade != null)
-            {
-                grade.FullName = updatedGrades.FullName;
-                grade.SettingNumber = updatedGrades.SettingNumber;
-                grade.InformationSystem = updatedGrades.InformationSystem;
-                grade.Introduction = updatedGrades.Introduction;
-                grade.Math1 = updatedGrades.Math1;
-                grade.Physics = updatedGrades.Physics;
-                grade.English = updatedGrades.English;
-                grade.DescriteMath = updatedGrades.DescriteMath;
-                grade.Programming = updatedGrades.Programming;
-                grade.Status = updatedGrades.Status;
-            }
-            return grade;
+            var index = grades.IndexOf(grade);
+            grades[index] = updatedGrades;
+            return updatedGrades;
+
+            //if (grade != null)
+            //{
+            //    grade.FullName = updatedGrades.FullName;
+            //    grade.SettingNumber = updatedGrades.SettingNumber;
+            //    grade.InformationSystem = updatedGrades.InformationSystem;
+            //    grade.Introduction = updatedGrades.Introduction;
+            //    grade.Math1 = updatedGrades.Math1;
+            //    grade.Physics = updatedGrades.Physics;
+            //    grade.English = updatedGrades.English;
+            //    grade.DescriteMath = updatedGrades.DescriteMath;
+            //    grade.Programming = updatedGrades.Programming;
+            //    grade.Status = updatedGrades.Status;
+            //}
+            //return grade;
         }
     }
 }

@@ -8,14 +8,19 @@ namespace CollageGrades.Core
     public class Grades
     {
         public int Id { get; set; }
+
         [Required]
         [StringLength(80)]
         public string FullName { get; set; }
+
         [Required]
         public int SettingNumber { get; set; }
+
         [Required]
-        [Display(Name = "Informatics")]
+        [Range(0, 100)]
+        [Display(Name = "Information System")]
         public double InformationSystem { get; set; }
+
         [Required]
         public double Introduction { get; set; }
         [Required]
