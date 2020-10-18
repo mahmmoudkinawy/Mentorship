@@ -14,6 +14,7 @@ namespace CollageGrades.Core
         [Required]
         public int SettingNumber { get; set; }
         [Required]
+        [Display(Name = "Informatics")]
         public double InformationSystem { get; set; }
         [Required]
         public double Introduction { get; set; }
